@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+from Heads_and_Tails import eindopdr
+
 
 class window(tk.Tk):
     def __init__(self):
@@ -26,8 +28,8 @@ class window(tk.Tk):
         
     def game1(self):
         self.destroy()
+        eindopdr.coinflip()
         
-    
     def game2(self):
         pass
     
