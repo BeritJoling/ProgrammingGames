@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-from Heads_and_Tails import eindopdr
-
+# from Heads_and_Tails import eindopdr
+from snake import snake_menu
 
 class window(tk.Tk):
     def __init__(self):
@@ -11,10 +11,10 @@ class window(tk.Tk):
         self.main_label = tk.Label(self, text="This is the main menu, select the game you'd like to play from the buttons below.")
         self.main_label.grid(row=1, columnspan=3, padx=5, pady=10)
         
-        self.game1_start = ttk.Button(self, text="Heads and tails", command=self.game1)
+        self.game1_start = ttk.Button(self, text="game1", command=self.game1)
         self.game1_start.grid(row=2, column=1, padx=5, pady=5)
         
-        self.game2_start = ttk.Button(self, text="game2", command=self.game2)
+        self.game2_start = ttk.Button(self, text="Snake", command=self.game2)
         self.game2_start.grid(row=3, column=1, padx=5, pady=5)
         
         self.game3_start = ttk.Button(self, text="Game3", command=self.game3)
@@ -27,12 +27,13 @@ class window(tk.Tk):
         self.game5_start.grid(row=6, column=1, padx=5, pady=5)
         
     def game1(self):
-        self.destroy()
-        eindopdr.coinflip()
-        
-    def game2(self):
         pass
     
+    def game2(self):
+        snake_menu.snake_diff_window()
+        
+        self.destroy()
+        
     def game3(self):
         pass
     
