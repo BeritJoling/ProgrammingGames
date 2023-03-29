@@ -57,7 +57,7 @@ def veranderAchtergrond(event):
     Label1['background'] = random.choice(kleuren)
     Label2['background'] = random.choice(kleuren)
 
-
+#bind de rechtermuisknop met submit en functie die de achtergrond evranderd
 submit.bind('<Button-3>', veranderAchtergrond)
 
 
