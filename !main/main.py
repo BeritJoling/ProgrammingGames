@@ -1,97 +1,43 @@
-#De main pagina voor enidopdracht grogrammeren p3
+from tkinter import *
 
-#importeert tkinter. "tk" zorgt ervoor dat je "tkinter" niet de hele tijd hoeft in te vullen
-import tkinter as tk
+# Maak een nieuw window met een titel
+window = Tk()
+window.title("Menu voorbeeld")
 
-#maakt een window aan met de naam "Main Pagina"
-window = tk.Tk()
-window.title("Main Pagina")
+# Functies voor het menu
+def show_thing_1():
+    frame_thing_2.pack_forget()
+    frame_thing_1.pack()
 
-#voegt text toe dat ook de achtergrond is voor de window
-Label1 = tk.Label(
-    height=5,
-    width=30,
-    text='Main pagina programmeren \n ↓↓↓ Ontspannings tools  ↓↓↓',
-    font=("Arial", 30),
-    background='#ff7729',
-    foreground='white'
-)
-#dit zorgt ervoor dat de achtergrond volledig word gevuld
-Label1.pack(fill=tk.BOTH, expand=True)
+def show_thing_2():
+    frame_thing_2.pack()
+    frame_thing_1.pack_forget()
 
-#Boter Kaas en Eieren
-bte = tk.Button(
-    text="Boter Kaas en Eieren",
-    background='white',
-    font=("Arial", 18)   
-)
-bte.pack(side='left')
+# Menu maken
+menubar = Menu(window)
+window.config(menu=menubar)
 
-#Coin Flip
-cf = tk.Button(
-    text="Coinflip",
-    background='white',
-    font=("Arial", 18)   
-)
-cf.pack(side='left')
+# Menu items maken
+mainmenu = Menu(menubar)
+mainmenu.add_command(label="Thing 1", command=show_thing_1)
+mainmenu.add_command(label="Thing 2", command=show_thing_2)          
+mainmenu.add_separator()
+mainmenu.add_command(label="Exit", command=window.quit)
+# Menu toevoegen aan menubar
+menubar.add_cascade(label="Games",menu=mainmenu)
 
-#Dobbelen
-db = tk.Button(
-    text="Dobbelen",
-    background='white',
-    font=("Arial", 18)   
-)
-db.pack(side='left')
+# FRAME VOOR THING 1 --------------------------------
+frame_thing_1 = Frame(borderwidth=10)
+label_1 = Label(frame_thing_1, text="THING 1", bg = "blue", fg="white", width=20, height=8)
+label_1.pack()
 
-#Getallen Rader
-gr = tk.Button(
-    text="Getallen Rader",
-    background='white',
-    font=("Arial", 18)   
-)
-gr.pack(side='left')
+# FRAME VOOR THING 2 --------------------------------
+frame_thing_2 = Frame(borderwidth=10)
+label_2 = Label(frame_thing_2, text="THING 2", bg="red", fg="yellow", width=20, height=8)
+label_2.pack()
 
-#Snake
-sn = tk.Button(
-    text="Snake",
-    background='white',
-    font=("Arial", 18)   
-)
-sn.pack(side='left')
-
-
-#Buttons Binden
-
-def boterkaaseieren(event):
-    print('Boter Kaas en Eieren')
-    #Hier moet ik nog ff kijken hoe ik die shit kan linken
-
-bte.bind('<Button-1>', boterkaaseieren)
-
-
-def coinflip(event):
-    print('Coin Flip')
-    #Hier moet ik nog ff kijken hoe ik die shit kan linken
-
-cf.bind('<Button-1>', coinflip)
-
-def dobbelen(event):
-    print('Dobbelen')
-    #Hier moet ik nog ff kijken hoe ik die shit kan linken
-
-db.bind('<Button-1>', dobbelen)
-
-def getallenrader(event):
-    print('Getallen Rader')
-    #Hier moet ik nog ff kijken hoe ik die shit kan linken
-
-gr.bind('<Button-1>', getallenrader)
-
-def snake(event):
-    print('Snake')
-    #Hier moet ik nog ff kijken hoe ik die shit kan linken
-
-sn.bind('<Button-1>', snake)
-
-
+# MAIN --------------------------------
+# Begin met frame 1
+show_thing_1()
+# Start the application
 window.mainloop()
