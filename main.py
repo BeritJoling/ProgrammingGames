@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from snake import snake_menu
+from getallenraden import rohaneindopdracht
 
 class window(tk.Tk):
     def __init__(self):
@@ -16,7 +17,7 @@ class window(tk.Tk):
         self.game2_start = ttk.Button(self, text="Snake", command=self.game2)
         self.game2_start.grid(row=3, column=1, padx=5, pady=5)
         
-        self.game3_start = ttk.Button(self, text="Game3", command=self.game3)
+        self.game3_start = ttk.Button(self, text="Number Guessing", command=self.game3)
         self.game3_start.grid(row=4, column=1, padx=5, pady=5)
         
         self.game4_start = ttk.Button(self, text="Game4", command=self.game4)
@@ -34,7 +35,9 @@ class window(tk.Tk):
         self.destroy()
         
     def game3(self):
-        pass
+        rohaneindopdracht.GuessingGame()
+        
+        self.destroy
     
     def game4(self):
         pass

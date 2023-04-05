@@ -52,7 +52,3 @@ class GuessingGame:
         elif guess > self.number_to_guess:
             self.result_label.config(text="Het gezochte getal is lager.")
             #hier checkt die wat de gebruiker heeft ingevuld en geeft daarop antwoord
-
-root = tk.Tk()
-game = GuessingGame(root)
-root.mainloop()
