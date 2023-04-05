@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-# from Heads_and_Tails import eindopdr
 from snake import snake_menu
 
 class window(tk.Tk):
