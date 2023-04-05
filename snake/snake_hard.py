@@ -4,7 +4,7 @@ import random
 # Initialising Dimensions of Game
 WIDTH = 500
 HEIGHT = 500
-SPEED = 300
+SPEED = 100
 SPACE_SIZE = 20
 BODY_SIZE = 2
 SNAKE = "#00FF00"
@@ -139,7 +139,7 @@ def game_over():
 
 
 window = Tk()
-window.title("Snake.py || Easy ")
+window.title("Snake.py || Normal ")
 
 
 score = 0
