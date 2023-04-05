@@ -1,5 +1,4 @@
 from tkinter import *
-from DobbelenTkinter import *
 
 # Maak een nieuw window met een titel
 window = Tk()
