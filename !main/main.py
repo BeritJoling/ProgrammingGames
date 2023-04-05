@@ -1,4 +1,5 @@
 from tkinter import *
+from DobbelenTkinter import *
 
 # Maak een nieuw window met een titel
 window = Tk()
@@ -24,7 +25,7 @@ mainmenu.add_command(label="Thing 2", command=show_thing_2)
 mainmenu.add_separator()
 mainmenu.add_command(label="Exit", command=window.quit)
 # Menu toevoegen aan menubar
-menubar.add_cascade(label="Games", menu=mainmenu)
+menubar.add_cascade(label="Games",menu=mainmenu)
 
 # FRAME VOOR THING 1 --------------------------------
 frame_thing_1 = Frame(borderwidth=10)
