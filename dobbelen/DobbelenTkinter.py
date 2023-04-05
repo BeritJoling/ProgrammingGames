@@ -13,7 +13,7 @@ window.title("Dobbelen")
 Label1 = tk.Label(
     height=5,
     width=50,
-    text='Klik op "Random getal" om een random getal te maken!',
+    text='Klik op "Random getal" om een random getal te maken! \n Rechtermuisknop op "Random Getal" Veranderd de achtergrond',
     font=("Arial", 30),
     background='#aa00ff'
 )
