@@ -127,58 +127,70 @@ def check_collisions(snake):
 
 # Function to control everything
 def game_over():
+    canvas.delete("gameover")
+    canvas.create_text(canvas.winfo_width()/2,
+                       canvas.winfo_height()/2,
+                       font=('consolas', 70),
+                       text="GAME OVER", fill="red",
+                       tag="gameover")
+    # Add a button to restart the game
+    restart_button = Button(canvas, text="Restart", command=restart_game)
+    canvas.create_window(canvas.winfo_width()/2,
+                          canvas.winfo_height()/2 + 50,
+                          window=restart_button)
 
-	canvas.delete(ALL)
-	canvas.create_text(canvas.winfo_width()/2,
-					canvas.winfo_height()/2,
-					font=('consolas', 70),
-					text="GAME OVER", fill="red",
-					tag="gameover")
+def restart_game():
+    global window, canvas, label, score, direction, snake, food
+    window.destroy()
+    game()
+
 
 # Giving title to the gaming window
 
 
-window = Tk()
-window.title("Snake.py || Normal ")
+def game():
+    global window, canvas, label, score, direction, snake, food
+    window = Tk()
+    window.title("Snake.py || Normal ")
 
+    score = 0
+    direction = 'down'
 
-score = 0
-direction = 'down'
+	# Display of Points Scored in Game
 
-# Display of Points Scored in Game
-
-label = Label(window, text="Points:{}".format(score),
-			font=('consolas', 20))
-label.pack()
-
-canvas = Canvas(window, bg=BACKGROUND,
-				height=HEIGHT, width=WIDTH)
-canvas.pack()
-
-window.update()
-
-window_width = window.winfo_width()
-window_height = window.winfo_height()
-screen_width = window.winfo_screenwidth()
-screen_height = window.winfo_screenheight()
-
-x = int((screen_width/2) - (window_width/2))
-y = int((screen_height/2) - (window_height/2))
-
-window.geometry(f"{window_width}x{window_height}+{x}+{y}")
-
-window.bind('<Left>',
-			lambda event: change_direction('left'))
-window.bind('<Right>',
-			lambda event: change_direction('right'))
-window.bind('<Up>',
-			lambda event: change_direction('up'))
-window.bind('<Down>',
-			lambda event: change_direction('down'))
-
-snake = Snake()
-food = Food()
-
-next_turn(snake, food)
-
-window.mainloop()
+    label = Label(window, text="Points:{}".format(score),
+				font=('consolas', 20))
+    label.pack()
+    
+    canvas = Canvas(window, bg=BACKGROUND,
+					height=HEIGHT, width=WIDTH)
+    
+    canvas.pack()
+    
+    window.update()
+    
+    window_width = window.winfo_width()
+    window_height = window.winfo_height()
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
+    
+    x = int((screen_width/2) - (window_width/2))
+    y = int((screen_height/2) - (window_height/2))
+    
+    window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+    
+    window.bind('<Left>',
+				lambda event: change_direction('left'))
+    window.bind('<Right>',
+				lambda event: change_direction('right'))
+    window.bind('<Up>',
+				lambda event: change_direction('up'))
+    window.bind('<Down>',
+				lambda event: change_direction('down'))
+    
+    snake = Snake()
+    food = Food()
+    next_turn(snake, food)
+    window.mainloop()
+    
+game()
