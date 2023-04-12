@@ -80,9 +80,3 @@ class Dobbelen:
             self.clear.bind('<Button-1>', clearen)
 
 
-if __name__ == '__main__':
-    root = tk.Tk()
-    app = Dobbelen(root)
-    root.mainloop()
-
-        
