@@ -4,7 +4,7 @@ import random
 # Initialising Dimensions of Game
 WIDTH = 500
 HEIGHT = 500
-SPEED = 300
+SPEED = 200
 SPACE_SIZE = 20
 BODY_SIZE = 2
 SNAKE = "#00FF00"
@@ -144,14 +144,14 @@ def restart_game():
     window.destroy()
     game()
 
+
 # Giving title to the gaming window
 
 
 def game():
     global window, canvas, label, score, direction, snake, food
     window = Tk()
-    window.title("Snake.py || Easy ")
-    window.wm_attributes("-topmost", 1)
+    window.title("Snake.py || Normal ")
 
     score = 0
     direction = 'down'

@@ -13,7 +13,7 @@ window.title("Dobbelen")
 Label1 = tk.Label(
     height=5,
     width=50,
-    text='Klik op "Random getal" om een random getal te maken!',
+    text='Klik op "Random getal" om een random getal te maken! \n Rechtermuisknop op "Random Getal" Veranderd de achtergrond',
     font=("Arial", 30),
     background='#aa00ff'
 )
@@ -50,7 +50,7 @@ submit.bind('<Button-1>', submitten)
 
 
 #lijst van kleuren
-kleuren = list(('#aa00ff', '#ff3c00', '#00e1ff', '#0dff00', '#2600ff', '#fffb00', '#ff0000'))
+kleuren = list(('#aa00ff', '#ff3c00', '#00e1ff', '#0dff00', '#2600ff', '#fffb00', '#ff0000', '#ffffff'))
 
 #achtergrond veranderen met rechermuisknop
 def veranderAchtergrond(event):
