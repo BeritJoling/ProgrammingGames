@@ -22,6 +22,7 @@ class GuessingGame:
 
         self.result_label = tk.Label(master, text="")
         self.result_label.pack()
+        #hier is de balk waar je kan typen
         
 
         self.remaining_label = tk.Label(master, text="Je hebt nog {} pogingen over".format(self.guesses_remaining))
