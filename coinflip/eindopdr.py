@@ -33,8 +33,6 @@ class CoinFlipGame:
 
         self.e = Button(self.root, text="Exit Game", bg='gray', fg='white', activebackground="lightgray", padx=40, pady=20, command=self.exit)
         self.e.config(font=("Courier", 14))
-        
-        self.root.mainloop()
 
     def flip(self):
         num = random.randint(0,1)
@@ -46,4 +44,3 @@ class CoinFlipGame:
     def exit(self):
         self.root.destroy()
         
-CoinFlipGame()
