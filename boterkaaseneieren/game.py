@@ -214,6 +214,6 @@ def main():
 
 #If __name__ constructie controleert de uitvoering van de code.
 if __name__ == "__main__":
-    """aanroep voor main() vindt alleen plaats als u het .pybestand uitvoert 
+    """Aanroep voor main() vindt alleen plaats als u het .pybestand uitvoert 
     als een uitvoerbaar programma."""
     main()
