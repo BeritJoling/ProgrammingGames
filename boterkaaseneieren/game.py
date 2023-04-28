@@ -59,7 +59,7 @@ class BoterKaasEnEieren:
 
     #De .is_valid_move() methode neemt een Moveobject als argument mee.
     def is_valid_move(self, move):
-        """Retourneer True als de zet geldig is en anders False."""
+        """Retourneert True als de zet geldig is en anders False."""
         row, col = move.row, move.col
         move_was_not_played = self._current_moves[row][col].label == ""
         no_winner = not self._has_winner
@@ -79,12 +79,12 @@ class BoterKaasEnEieren:
                 break
 
     def has_winner(self):
-        """Retourneer True als het spel een winnaar heeft en anders False."""
+        """Retourneert True als het spel een winnaar heeft en anders False."""
         return self._has_winner
 
     #controleert op gelijkspel
     def is_tied(self):
-        """Retourneer True als het spel gelijk is, anders False."""
+        """Retourneert True als het spel gelijk is, anders False."""
         no_winner = not self._has_winner
         played_moves = (
             move.label for row in self._current_moves for move in row
@@ -93,7 +93,7 @@ class BoterKaasEnEieren:
 
     #Wisselt spelers tussen beurten
     def toggle_player(self):
-        """Retourneer een gewisselde speler."""
+        """Retourneert een gewisselde speler."""
         self.current_player = next(self._players)
 
     def reset_game(self):
@@ -107,9 +107,6 @@ class BoterKaasEnEieren:
 
 class Speelveld(tk.Tk):
     def __init__(self, game):
-        """De laatste regel van deze methode roept aan ._get_winning_combos()en wijst de 
-        retourwaarde toe aan ._winning_combos. U implementeert deze nieuwe methode in de volgende 
-        sectie."""
         super().__init__()
         """.titleattribuut wordt gedefenieert zodat de weergegeven tekst op de 
         titelbalk van het venster verschijnt."""
@@ -120,6 +117,7 @@ class Speelveld(tk.Tk):
         self._create_board_display()
         self._create_board_grid()
 
+    #hier wordt het menu gemaakt dat linksbovenin in de balk van de applicatie verschijnt.
     def _create_menu(self):
         menu_bar = tk.Menu(master=self)
         self.config(menu=menu_bar)
@@ -140,7 +138,7 @@ class Speelveld(tk.Tk):
         )
         self.display.pack()
 
-    #bordvenster
+    #maakt het bordvenster
     def _create_board_grid(self):
         grid_frame = tk.Frame(master=self)
         grid_frame.pack()
@@ -209,7 +207,7 @@ class Speelveld(tk.Tk):
 
 #maakt het speelbord en voort de hoofdloop uit (bord.mainloop()).
 def main():
-    """Maak het bord van het spel en voer de hoofdlus uit."""
+    """Maak het bord van het spel en voert de hoofdlus uit."""
     game = BoterKaasEnEieren()
     board = Speelveld(game)
     board.mainloop()
